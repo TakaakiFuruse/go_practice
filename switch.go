@@ -1,23 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+var (
+	region  string
+	weather string
+	city_ar = []string{"LAX", "SFC", "SAN", "ORD",
+		"NRT", "ROM", "SAN", "NYC"}
+)
 
 func location(city string) (string, string) {
-	var region string
-	var weather string
-
 	switch city {
-	case "LA", "SF", "SD":
+	case "LAX", "SFC", "SAN":
 		region, weather = "Westcoast", "Sun and Beer!!"
-	case "BOS", "NYT", "CHI":
+	case "BOS", "NYC", "ORD":
 		region, weather = "Eastcoast", "Crowded city and heavy Snow! Happy!"
 	default:
-		region, weather = "I don't know the place", "the weather I don't know."
+		region, weather = "the place where I don't know.", "the weather I don't know."
 	}
 	return region, weather
 }
 
+func return_answer(pLAXce_name string) {
+	region, weather := location(pLAXce_name)
+	fmt.Printf("%s? It's in %s. That has %s \n", pLAXce_name, region, weather)
+}
+
 func main() {
-	region, weather := location("MARS")
-	fmt.Printf("It's in %s. That has %s", region, weather)
+	for i := 0; i < len(city_ar); i++ {
+		return_answer(city_ar[i])
+	}
 }
