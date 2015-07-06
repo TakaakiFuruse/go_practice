@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	instance_var string = "i am kinda inctance var"
+	instance_var string = "i am kinda instance var"
 )
 
 func print_nums() {
