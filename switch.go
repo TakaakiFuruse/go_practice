@@ -23,9 +23,9 @@ func location(city string) (string, string) {
 	return region, weather
 }
 
-func return_answer(pLAXce_name string) {
-	region, weather := location(pLAXce_name)
-	fmt.Printf("%s? It's in %s. That has %s \n", pLAXce_name, region, weather)
+func return_answer(place_name string) {
+	region, weather := location(place_name)
+	fmt.Printf("%s? It's in %s. That has %s \n", place_name, region, weather)
 }
 
 func main() {
