@@ -92,7 +92,6 @@ func myMap() {
 	fmt.Println(age)
 	age["AAA"] = 111
 	fmt.Println(age)
-
 }
 
 func main() {
