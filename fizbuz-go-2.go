@@ -5,9 +5,11 @@ import "fmt"
 func fizbuz(x int) int {
 	if divisible(x, 15) {
 		fizbuz15()
-	} else if divisible(x, 5) {
+	}
+	if divisible(x, 5) {
 		fizbuz5()
-	} else if divisible(x, 3) {
+	}
+	if divisible(x, 3) {
 		fizbuz3()
 	} else {
 		fmt.Println(x)

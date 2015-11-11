@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 var (
 	instance_var string = "i am kinda instance var"
@@ -17,7 +15,6 @@ func print_nums() {
 	fmt.Println("a && b || a && c  is", a == b && a == c)
 	fmt.Println("not true ", !true)
 	fmt.Println("a c  not true ", a != c)
-
 	fmt.Println("p instance var from print_nums", instance_var)
 
 	instance_var = "i am from print nums"
@@ -216,6 +213,7 @@ func (reciever *CalorieCalc) aGuy() int {
 	return reciever.largeButaYasai + reciever.woolongTea
 }
 
+// ===================================================
 func main() {
 	// print_nums()
 	// forAndSwith()
@@ -229,7 +227,7 @@ func main() {
 	// returnValue1()
 	// returnTwoValues()
 	// fmt.Println(splatOperater("i", "LUV", "ruby",
-	// 	"and", "soso", "love", "go !!"))
+	//  "and", "soso", "love", "go !!"))
 	// fmt.Println(factorial(10))
 
 	// defer printTwo() // -> without defer, Two comes first
@@ -245,9 +243,10 @@ func main() {
 	// thisisPointer(&argStr) // need "&" here!!
 	// fmt.Println(argStr)
 
-	calories := CalorieCalc{3000, 2000, 1800, 1000, 800, 500, 0}
-	fmt.Println("You took", calories.daiJiro, "kilo calories")
-	fmt.Println("You took", calories.mini, "kilo calories")
-	fmt.Println("SumoWrestler ate", calories.sumoWrestler(), "kilo calories")
-	fmt.Println("A GUy ate", calories.aGuy(), "kilo calories")
+	// calories := CalorieCalc{3000, 2000, 1800, 1000, 800, 500, 0}
+	// fmt.Println("You took", calories.daiJiro, "kilo calories")
+	// fmt.Println("You took", calories.mini, "kilo calories")
+	// fmt.Println("SumoWrestler ate", calories.sumoWrestler(), "kilo calories")
+	// fmt.Println("A GUy ate", calories.aGuy(), "kilo calories")
+
 }
