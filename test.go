@@ -2,37 +2,25 @@ package main
 
 import "fmt"
 
-func fizbuz(x int) int {
-	if divisible(x, 15) {
-		fizbuz15()
-	} else if divisible(x, 5) {
-		fizbuz5()
-	} else if divisible(x, 3) {
-		fizbuz3()
-	} else {
-		fmt.Println(x)
-	}
-	return x
+type Rectangle struct {
+	length, width int
 }
 
-func divisible(num1, num2 int) bool {
-	return num1%num2 == 0
+type Cube struct {
+	side int
 }
 
-func fizbuz15() {
-	fmt.Println("fizbuz")
+func (r Rectangle) Area() int {
+	return r.length * r.width
 }
 
-func fizbuz5() {
-	fmt.Println("fiz")
-}
-
-func fizbuz3() {
-	fmt.Println("buz")
+func (c Cube) Area() int {
+	return c.side * c.side * c.side
 }
 
 func main() {
-	for i := 1; i < 16; i++ {
-		fizbuz(i)
-	}
+	rect := Rectangle{length: 5, width: 2}
+	cube := Cube{side: 3}
+	fmt.Println(rect.Area())
+	fmt.Println(cube.Area())
 }

@@ -1,23 +1,22 @@
-
 // ####### hash in hash ########
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
-// func main() {
-//   m := map[string]map[string]int{
-//     "a": map[string]int{
-//       "1": 13,
-//       "2": 27,
-//     },
-//     "b": map[string]int{
-//       "42": 42,
-//       "109": 333,
-//     },
-//   }
-//   fmt.Printf("m[%s][%s] = %d\n", "a", "1", m["a"]["1"])
-//   fmt.Printf("m[%s][%s] = %d\n", "b", "42", m["b"]["42"])
-// }
+func main() {
+	m := map[string]map[string]int{
+		"a": map[string]int{
+			"1": 13,
+			"2": 27,
+		},
+		"b": map[string]int{
+			"42":  42,
+			"109": 333,
+		},
+	}
+	fmt.Printf("m[%s][%s] = %d\n", "a", "1", m["a"]["1"])
+	fmt.Printf("m[%s][%s] = %d\n", "b", "42", m["b"]["42"])
+}
 
 //                ########Hash############
 // package main
