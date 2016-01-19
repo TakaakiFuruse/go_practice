@@ -11,8 +11,9 @@ import (
 )
 
 func main() {
-	word := strings.Fields("take the sen parameter being passed and return the largest")
-	sort.Strings(word)
-	fmt.Println(word)
+	word := "parameter"
+	result := strings.Split(word, "")
+	fmt.Println(result)
+	fmt.Println(sort.Reverse(result))
 
 }
