@@ -11,5 +11,5 @@ func TestLongestWord(t *testing.T) {
 	assert.Equal(t, findLongestWord("May the force be with you"), 5, "2")
 	assert.Equal(t, findLongestWord("Google do a barrel roll"), 6, "3")
 	assert.Equal(t, findLongestWord("What is the average airspeed velocity of an unladen swallow"), 8, "4")
-	assert.Equal(t, findLongestWord("What if we try a super-long word such as otorhinolaryngology"), 19, "5")
+	assert.Equal(t, findLongestWord("What if we try a super-long word such as otorhinolaryngology"), 19)
 }
