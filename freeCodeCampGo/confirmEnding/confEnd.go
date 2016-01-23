@@ -3,22 +3,33 @@ package confEnd
 import "strings"
 
 func end(s ...string) bool {
-	wordsToBeChecked := s[0]
 	wordToCheck := s[1]
-	wordsAr := strings.Split(wordsToBeChecked, " ")
-	lasLetterOfWord := strings.Split(wordsAr[len(wordsAr)-1], "")
+	wordToCheckAr := strings.Split(wordToCheck, "")
+	wordsToBeChecked := s[0]
+	wordsToBeCheckedAr := strings.Split(wordsToBeChecked, " ")
+	lasLetterOfWord := strings.Split(wordsToBeCheckedAr[len(wordsToBeCheckedAr)-1], "")
 	endLetter := lasLetterOfWord[len(lasLetterOfWord)-1]
 
-	if len(wordsAr) == 1 && endLetter == wordToCheck {
+	if len(wordsToBeCheckedAr) == 1 && endLetter == wordToCheck {
 		return true
 	}
 
-	if len(wordToCheck) > 1 && endLetter == wordToCheck {
-		return true
-	}
-	if wordsAr[len(wordsAr)-1] == wordToCheck {
+	if wordsToBeCheckedAr[len(wordsToBeCheckedAr)-1] == wordToCheck {
 		return true
 	} else {
-		return false
+		lw := strings.Split(wordsToBeCheckedAr[len(wordsToBeCheckedAr)-1], "")
+		for i, j := 0, len(lw)-1; i < j; i, j = i+1, j-1 {
+			lw[i], lw[j] = lw[j], lw[i]
+		}
+		for i, j := 0, len(wordToCheckAr)-1; i < j; i, j = i+1, j-1 {
+			wordToCheckAr[i], wordToCheckAr[j] = wordToCheckAr[j], wordToCheckAr[i]
+		}
+
+		for i := 0; i < len(wordToCheckAr); i++ {
+			if wordToCheckAr[i] != lw[i] {
+				return false
+			}
+		}
+		return true
 	}
 }
