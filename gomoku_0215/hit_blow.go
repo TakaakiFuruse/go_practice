@@ -9,12 +9,8 @@ import (
 	"time"
 )
 
-func main() {
-	nums := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+func arrayGenrator(nums []string) []string {
 	randAr := []string{}
-	ansAr := []string{}
-	hit := 0
-	blow := 0
 
 	for i := 1; i < 5; i++ {
 		rand.Seed(time.Now().UnixNano())
@@ -22,12 +18,17 @@ func main() {
 		randAr = append(randAr, nums[n])
 		nums = append(nums[:n], nums[n+1:]...)
 	}
+	return randAr
+}
 
+func gameRunner(hit int, blow int, randAr []string) int {
+	ansAr := []string{}
 	for hit < 4 {
 		reader := bufio.NewReader(os.Stdin)
 		fmt.Print("Enter text: ")
 		text, _ := reader.ReadString('\n')
 		ansAr = strings.Split(text, "")
+		fmt.Println(randAr)
 
 		for i := 0; i < 4; i++ {
 			if randAr[i] == ansAr[i] {
@@ -49,4 +50,14 @@ func main() {
 		hit = 0
 		blow = 0
 	}
+	return hit
+}
+
+func main() {
+	nums := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+
+	randAr := arrayGenrator(nums)
+	hit := 0
+	blow := 0
+	gameRunner(hit, blow, randAr)
 }
