@@ -21,7 +21,7 @@ func arrayGenrator(nums []string) []string {
 	return randAr
 }
 
-func gameRunner(hit int, blow int, randAr []string) int {
+func gameRunner(hit int, blow int, randAr []string) {
 	ansAr := []string{}
 	for hit < 4 {
 		reader := bufio.NewReader(os.Stdin)
@@ -50,7 +50,6 @@ func gameRunner(hit int, blow int, randAr []string) int {
 		hit = 0
 		blow = 0
 	}
-	return hit
 }
 
 func main() {
