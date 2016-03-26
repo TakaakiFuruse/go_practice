@@ -27,8 +27,7 @@ func gameRunner(hit int, blow int, randAr []string) {
 		reader := bufio.NewReader(os.Stdin)
 		fmt.Print("Enter text: ")
 		text, _ := reader.ReadString('\n')
-		ansAr = strings.Split(text, "")
-		fmt.Println(randAr)
+		ansAr, err = strings.Split(text, "")
 
 		for i := 0; i < 4; i++ {
 			if randAr[i] == ansAr[i] {
@@ -58,5 +57,6 @@ func main() {
 	randAr := arrayGenrator(nums)
 	hit := 0
 	blow := 0
+
 	gameRunner(hit, blow, randAr)
 }
