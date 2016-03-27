@@ -58,7 +58,8 @@ func (g *Game) ansChecker() {
 }
 
 func main() {
-	var g Game
+	// var g Game
+	g := &Game{}
 	g.randArGenerator()
 	for g.hit < 4 {
 		fmt.Println(g.randAr)
