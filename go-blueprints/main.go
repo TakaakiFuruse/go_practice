@@ -1,11 +1,11 @@
 package main
 
 import (
-	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
 	"sync"
+	"text/template"
 )
 
 type templateHandler struct {
@@ -22,12 +22,8 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(`
-      `))
-	})
-	if err := http.ListenAndServe(":3000", nil); err != nil {
+	http.Handle("/", &templateHandler{filename: "chat.html"})
+  if err := http.ListenAndServe(":3000", nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
-
-	}
+  }
 }
