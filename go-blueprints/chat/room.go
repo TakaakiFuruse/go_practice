@@ -1,7 +1,7 @@
 package main
 
 import (
-	"blueprint/trace"
+	"blue-prints/trace"
 	"log"
 	"net/http"
 
