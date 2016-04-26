@@ -29,7 +29,7 @@ func (r *room) run() {
 		select {
 		case client := <-r.join:
 			r.clients[client] = true
-			r.tracer.trace("we had a new user!")
+			r.tracer.Trace("we had a new user!")
 		case client := <-r.leave:
 			delete(r.clients, client)
 			close(client.send)
