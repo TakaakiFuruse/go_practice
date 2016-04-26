@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"sync"
 	"text/template"
+	"trace"
 )
 
 type templateHandler struct {
@@ -28,7 +29,9 @@ func main() {
 	flag.Parse()
 	r := newRoom()
 	r.tracer = trace.New(os.Stdout)
-	http.Handle("/", &templateHandler{filename: "chat.html"})
+	// http.Handle("/", &templateHandler{filename: "chat.html"})
+	http.Handle("/chat", MustAuth(&templateHandler{filename: "chat.html"}))
+	http.Handle("/login", &templateHandler{filename: "login.html"})
 	http.Handle("/room", r)
 	go r.run()
 	log.Println("launching server port :", *addr)
