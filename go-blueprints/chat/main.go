@@ -34,7 +34,7 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		data["UserData"] = objx.MustFromBase64(authCookie.Value)
 	}
 
-	t.temp1.Execute(w, r)
+	t.temp1.Execute(w, data)
 
 }
 
