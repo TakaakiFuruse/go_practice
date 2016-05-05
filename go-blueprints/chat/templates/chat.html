@@ -21,6 +21,7 @@
         <br/>
         <textarea></textarea>
         <input type="submit" value=" 送信 " />
+        <a href="/logout">logout</a>
     </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
     </script>
@@ -52,6 +53,10 @@
                 var msg = eval("(" + e.data + ")");
                 messages.append(
                     $("<li>").append(
+                    $("<img>").css({
+                      width:50,
+                      vaerticalAlign:"middle"
+                    }).attr("src", msg.AvatarURL),
                     $("<strong>").text(msg.Name + ": "),
                     $("<span>").text("@" + msg.When + "\n" ),
                     $("<span>").text(msg.Message)
