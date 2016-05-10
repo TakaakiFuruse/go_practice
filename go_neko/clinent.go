@@ -10,13 +10,6 @@ type client struct {
 	room   *room
 }
 
-type room struct {
-	forward chan []byte
-	join    chan *client
-	leave   chan *client
-	clients map[*client]bool
-}
-
 func (c *client) read() {
 	for {
 		if _, msg, err := c.socket.ReadMessage(); err == nil {
